@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> global name 'form' is not defined"
+p3
+sS'layer'
+p4
+S'/home/sourav/web2py/applications/test1/controllers/project_demo.py'
+p5
+sS'code'
+p6
+S'from binascii import a2b_base64\ndef image_insert():\n    name_image=request.vars.name_image\n    image_var=request.vars.file\n    db.imagestore.insert(name= name_image, picture = image_var)\n    return "hello"\n\ndef image_insert2():\n    name_image=request.vars.name_image\n    data=request.vars.file\n    form = SQLFORM(db.imagestore).process()\n    try:\n        binary_data=a2b_base64(data)\n        fd = open(\'image.png\', \'wb\')\n        fd.write(binary_data)\n        fd.close()\n        fk = open(\'image.png\',\'rb\')\n        if len(name) > 0:\n            image_id = db.imagestore.insert(name= name_image, picture = fk)\n            image_select = db(db.imagestore.id == image_id).select().first()\n        else:\n            return \'\'\n    except :\n        return \'\'\n    return URL(\'default\',\'download\',args=[image_select.picture])\n\n\ndef image_upload():\n    return dict()\n\n\n\n\ndef cropper():\n    return dict()\n\n\n\n\ndef upload_demo():\n    return dict(form=form)\n\ndef check_session():\n    return session.image\n\nresponse._vars=response._caller(upload_demo)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/sourav/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/sourav/web2py/applications/test1/controllers/project_demo.py", line 46, in <module>\n  File "/home/sourav/web2py/gluon/globals.py", line 412, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/sourav/web2py/applications/test1/controllers/project_demo.py", line 41, in upload_demo\n    return dict(form=form)\nNameError: global name \'form\' is not defined\n'
+p11
+s.

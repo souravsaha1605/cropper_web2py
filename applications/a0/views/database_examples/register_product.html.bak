@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+<h1>Product registration form</h1>
+{{=form.custom.begin}}
+Name: <div>{{=form.custom.widget.name}}</div>
+File: <div>{{=form.custom.widget.picture}}</div>
+{{form.custom.submit['_id'] = 'getDataButton'}}
+{{=form.custom.submit}}
+{{=form.custom.end}}

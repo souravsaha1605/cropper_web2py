@@ -1,0 +1,133 @@
+{{
+
+response.files.append(URL('static','css/cropper.min.css'))
+response.files.append(URL('static','js/cropper.js'))
+}}
+
+
+{{extend 'layout.html'}}
+
+<h1>This is the project_demo/cropper.html template</h1>
+
+
+<span id="lblError"></span>
+<div id="target"></div>
+<!--
+<form >
+ <input id="avatar" type="file" name="avatar" />
+<input type="text" name="name_image" id="imageid" required>
+
+<input type="submit" name="crop_attempt" value="Crop and Save" id="getDataButton">
+</form>
+-->
+{{=form.custom.begin}}
+Picture: <div>{{=form.custom.widget.picture}}</div>
+{{form.custom.submit['_id'] = 'getDataButton'}}
+<input type="button" id="cropattmpt" value="Crop">
+{{=form.custom.submit}}
+{{=form.custom.end}}
+
+<div class="cropper-example-1 container" style="width: 600.64px; height: 369.36px; left: 112.68px; top: 71.82px;">
+    <img id="blah" src="#" alt="your image" />
+  
+</div>
+<h2>
+   <p id="demo"></p>
+    <p id="showValue"></p>
+    <p id="displayValue"></p>
+</h2>
+<div id="preview">
+</div>
+<script>
+    var image_file;
+    function dataURItoBlob(dataURI) {
+    // convert base64/URLEncoded data component to raw binary data held in a string
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(dataURI.split(',')[1]);
+    else
+        byteString = unescape(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ia], {type:mimeString});
+}
+$("#imagestore_picture").change(function(event){
+var allowedFiles = [".png", ".jpg", ".gif"];
+            var imagestore_picture = $("#imagestore_picture");
+            var lblError = $("#lblError");
+            var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:()])+(" + allowedFiles.join('|') + ")$");
+            if (!regex.test(imagestore_picture.val().toLowerCase())) {
+                lblError.html("Please upload files having extensions: <b>" + allowedFiles.join(', ') + "</b> only.");
+                return false;
+            }
+    //readURL(this);
+    document.getElementById("preview").innerHTML=URL.createObjectURL(event.target.files[0]);
+    $("#blah").prop('src',URL.createObjectURL(event.target.files[0]));
+  croppedItem  = $('.container > img').cropper({
+  aspectRatio: 16 / 9,
+  autoCropArea: .7,
+  strict: true,
+  guides: false,
+  highlight: true,
+  dragCrop: false,
+  cropBoxMovable: false,
+  cropBoxResizable: false,
+  background: false
+});
+    });
+$("#cropattmpt").click(function(){
+       event.preventDefault();
+
+    var file_data=croppedItem.cropper('getCroppedCanvas');
+      var canvas_data=file_data.toDataURL();
+   document.getElementById("demo").innerHTML=canvas_data;
+    var blobImage = dataURItoBlob(canvas_data);
+    var fd = new FormData(document.forms[0]);
+    fd.set('imagestore_picture', blobImage, 'scenery.jpg');
+    });
+    $("#getDataButton").click(function(){
+        event.preventDefault();
+      /*var file_data=croppedItem.cropper('getCroppedCanvas');
+      var canvas_data=file_data.toDataURL();
+        canvas_data=canvas_data.split(",")[1];
+         $("#preview").html(canvas_data);*/
+         var reader = new FileReader();
+    reader.onload = function(e) {
+       image_file=e.target.result;
+        console.log(image_file);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+
+      var form_data = new FormData();
+        image_file=image_file.split(",")[1];
+        form_data.append("file", image_file)
+        var xhr = new XMLHttpRequest();
+       xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				document.getElementById("target").innerHTML = xhr.responseText;
+                document.getElementById("lblError").innerHTML = "";
+			}
+		}
+        xhr.open("POST", "{{=URL("project_demo","image_insert2")}}", true);
+        xhr.send(form_data);
+    });
+
+/*
+  */
+   </script>
+{{
+record = SQLTABLE(db().select(db.imagestore.ALL),
+                       upload = URL('default','download'), # allows pics preview
+                       headers='fieldname:capitalize')
+
+}}
+{{=record}}
