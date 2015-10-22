@@ -1,9 +1,7 @@
 {{
-
 response.files.append(URL('static','css/cropper.min.css'))
 response.files.append(URL('static','js/cropper.js'))
 }}
-
 
 {{extend 'layout.html'}}
 
@@ -15,7 +13,7 @@ response.files.append(URL('static','js/cropper.js'))
 
 <form >
  <input id="avatar" type="file" name="avatar" />
-<input type="text" name="name_image" id="imageid" required>
+<input type="text" name="name_image" id="imageid" >
 
 <input type="button" value="Crop and Save" id="getDataButton">
 </form>
@@ -34,12 +32,12 @@ response.files.append(URL('static','js/cropper.js'))
 <div id="preview">
 </div>
 <script>
-$("#imagestore_picture").change(function(event){
+$("#avatar").change(function(event){
 var allowedFiles = [".png", ".jpg", ".gif"];
-            var imagestore_picture = $("#imagestore_picture");
+            var avatar = $("#avatar");
             var lblError = $("#lblError");
             var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:()])+(" + allowedFiles.join('|') + ")$");
-            if (!regex.test(imagestore_picture.val().toLowerCase())) {
+            if (!regex.test(avatar.val().toLowerCase())) {
                 lblError.html("Please upload files having extensions: <b>" + allowedFiles.join(', ') + "</b> only.");
                 return false;
             }
@@ -60,16 +58,15 @@ var allowedFiles = [".png", ".jpg", ".gif"];
 
     $("#getDataButton").click(function(){
         event.preventDefault();
-      var file_data=croppedItem.cropper('getCroppedCanvas');
-      var canvas_data=file_data.toDataURL();
-        
-        canvas_data=canvas_data.split(",")[1];
-         $("#preview").html(canvas_data);
-      var form_data = new FormData();
+        var file_data=croppedItem.cropper('getCroppedCanvas');
+        var canvas_data=file_data.toDataURL();
+        //canvas_data=canvas_data.split(",")[1];
+        $("#preview").html(canvas_data);
+        var form_data = new FormData();
         form_data.append("name_image",$('input#imageid').val())
         form_data.append("file", canvas_data)
         var xhr = new XMLHttpRequest();
-       xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				document.getElementById("target").innerHTML = xhr.responseText;
                 document.getElementById("lblError").innerHTML = "";
