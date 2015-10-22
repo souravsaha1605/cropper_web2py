@@ -1,0 +1,379 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> global name 'base64' is not defined"
+p3
+sS'layer'
+p4
+S'/home/sourav/web2py/applications/test3/controllers/project_demo.py'
+p5
+sS'code'
+p6
+S'from binascii import a2b_base64\nfrom PIL import Image\nimport os\nimport StringIO\ndef image_insert():\n    name_image=request.vars.name_image\n    image_var=request.vars.file\n    db.imagestore.insert(name= name_image, picture = image_var)\n    return "hello"\n\ndef new():\n    x = session.new\n    return locals()\n\ndef image_insert2():\n    size1=(160,90)\n    name_image=request.vars.name_image\n    data=request.vars.file\n    dataList = data.split(\',\')\n    imageString = dataList[1]\n    size = len(imageString)*3/4\n    session.new = [size]\n    imageString.replace(" ", "+")\n    session.new.append(imageString)\n    imageDecode = base64.b64decode(imageString)\n    session.new.append(imageDecode)\n    return 1\n\n\ndef image_upload():\n    return dict()\n\n\n\n\ndef cropper():\n    return dict()\n\n\n\n\ndef upload_demo():\n    return dict()\n\ndef check_session():\n    return session.image\n\nresponse._vars=response._caller(image_insert2)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.NameError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.NameError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.NameError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.NameError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.NameError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.NameError object>'
+p23
+sS'args'
+p24
+S'("global name \'base64\' is not defined",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.NameError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.NameError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.NameError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.NameError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.NameError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.NameError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.NameError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.NameError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.NameError object>'
+p47
+sS'__doc__'
+p48
+S"'Name not found globally.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.NameError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"global name 'base64' is not defined"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\xb6a\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>test3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>project_demo</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-83bf2a0c-5ffe-47f0-90eb-89b159eb0096<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_test3</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-426cda69-53d2-433c-93d3-8b10176c31a7<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>21919</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarykycCxN5A5dsymChF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>*/*</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>21919</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarykycCxN5A5dsymChF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-426cda69-53d2-433c-93d3-8b10176c31a7; session_id_admin=127.0.0.1-83bf2a0c-5ffe-47f0-90eb-89b159eb0096; session_id_test3=127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ORIGIN</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/test3/project_demo/upload_demo</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/test3/project_demo/image_insert2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>51263</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>sourav-Lenovo-Z580</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/sourav/web2py/applications/test2/&#x27;, &#x27;/home/sourav/web2py/applications/test1/&#x27;, &#x27;/home/sourav/web2py/applications/welcome/&#x27;, &#x27;/home/sourav/web2py/applications/admin/&#x27;, &#x27;/home/sourav/web2py/applications/test3/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f17edb7abd8: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;sourav-Lenovo-Z580&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/sourav/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_length</td><td style="vertical-align:top;">:</td><td><div>21919</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarykycCxN5A5dsymChF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>*/*</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_length</td><td style="vertical-align:top;">:</td><td><div>21919</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarykycCxN5A5dsymChF</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-426cda69-53d2-433c-93d3-8b10176c31a7; session_id_admin=127.0.0.1-83bf2a0c-5ffe-47f0-90eb-89b159eb0096; session_id_test3=127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_origin</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/test3/project_demo/upload_demo</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>sourav-Lenovo-Z580</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/test3/project_demo/image_insert2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>51263</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/test3/project_demo/image_insert2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>sourav-Lenovo-Z580</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.19.00.18.03</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f17f1eb41e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f17ed803b48&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f17b9351dd0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f17f1eb41e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f17ed803b48&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f17b9351dd0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py/applications/test3/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>image_insert2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/sourav/web2py/applications/test2/&#x27;, &#x27;/home/sourav/web2py/applications/test1/&#x27;, &#x27;/home/sourav/web2py/applications/welcome/&#x27;, &#x27;/home/sourav/web2py/applications/admin/&#x27;, &#x27;/home/sourav/web2py/applications/test3/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f17edb7abd8: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;sourav-Lenovo-Z580&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/sourav/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>sourav-Lenovo-Z580</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.12.3-stable+timestamp.2015.08.19.00.18.03</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_sheduler</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2015, 10, 22, 14, 26, 42, 623969)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/test3/project_demo/image_insert2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2015, 10, 22, 8, 56, 42, 624009)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7f17b8291710&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/sourav/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x7f17b829b3b0, file "/...tions/test3/controllers/project_demo.py", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S"(code='from binascii import a2b_base64\\nfrom PIL import ...\\n\\nresponse._vars=response._caller(image_insert2)\\n', environment={'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}, layer='/home/sourav/web2py/applications/test3/controllers/project_demo.py')"
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/sourav/web2py/applications/test3/controllers/project_demo.py'
+p88
+sg64
+(dp89
+sg70
+I48
+sg71
+(dp90
+I37
+S'    return dict()'
+p91
+sI38
+S''
+sI39
+S''
+sI40
+S''
+sI41
+S''
+sI42
+S'def upload_demo():'
+p92
+sI43
+S'    return dict()'
+p93
+sI44
+S''
+sI45
+S'def check_session():'
+p94
+sI46
+S'    return session.image'
+p95
+ssg83
+S'()'
+p96
+sg85
+S'<module>'
+p97
+sa(dp98
+g62
+S'/home/sourav/web2py/gluon/globals.py'
+p99
+sg64
+(dp100
+S'self'
+p101
+S'undefined'
+p102
+sS'f'
+S'<function image_insert2>'
+p103
+ssg70
+I412
+sg71
+(dp104
+I416
+S"        self.generic_patterns = ['*']"
+p105
+sI407
+S"        self.flash = ''            # used by the default view layout"
+p106
+sI408
+S'        self.meta = Storage()      # used by web2py_ajax.html'
+p107
+sI409
+S'        self.menu = []             # used by the default view layout'
+p108
+sI410
+S'        self.files = []            # used by web2py_ajax.html'
+p109
+sI411
+S'        self._vars = None'
+p110
+sI412
+S'        self._caller = lambda f: f()'
+p111
+sI413
+S'        self._view_environment = None'
+p112
+sI414
+S'        self._custom_commit = None'
+p113
+sI415
+S'        self._custom_rollback = None'
+p114
+ssg83
+S'(f=<function image_insert2>)'
+p115
+sg85
+S'<lambda>'
+p116
+sa(dp117
+g62
+S'/home/sourav/web2py/applications/test3/controllers/project_demo.py'
+p118
+sg64
+(dp119
+S'imageString'
+p120
+S"'/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsO...0qaP761zynY0UdTHaLWnYpN9iuMcgyhgQKK3ZegorJzK5D//Z'"
+p121
+sS'base64'
+p122
+g102
+sS'imageDecode'
+p123
+g102
+ssg70
+I25
+sg71
+(dp124
+I20
+S'    imageString = dataList[1]'
+p125
+sI21
+S'    size = len(imageString)*3/4'
+p126
+sI22
+S'    session.new = [size]'
+p127
+sI23
+S'    imageString.replace(" ", "+")'
+p128
+sI24
+S'    session.new.append(imageString)'
+p129
+sI25
+S'    imageDecode = base64.b64decode(imageString)'
+p130
+sI26
+S'    session.new.append(imageDecode)'
+p131
+sI27
+S'    return 1'
+p132
+sI28
+S''
+sI29
+S''
+ssg83
+S'()'
+p133
+sg85
+S'image_insert2'
+p134
+sasS'pyver'
+p135
+S'Python 2.7.9: /usr/bin/python (prefix: /usr)'
+p136
+sS'session'
+p137
+g57
+(S's\xa5V\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">last_orderby</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_query</td><td style="vertical-align:top;">:</td><td><div>db.imagestore.id&gt;0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">new</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>16248</div></td></tr><tr><td><div>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</div></td></tr></table></div></td></tr></table></div>'
+tRp138
+sS'etype'
+p139
+S"<type 'exceptions.NameError'>"
+p140
+sS'date'
+p141
+S'Thu Oct 22 14:26:42 2015'
+p142
+sS'response'
+p143
+g57
+(S's\x8c?\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7f17b9338260&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_test3</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">logo</td><td style="vertical-align:top;">:</td><td><div><a class="navbar-brand" href="http://www.web2py.com/" id="web2py-logo"><b>web<span>2</span>py</b>&trade;&nbsp;</a></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/test3/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>My Sites</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/site</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>This App</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Design</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/design/test3</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Controller</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/controllers/project_demo.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>View</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/views/project_demo/image_insert2.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>DB Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/models/db.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Menu Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/models/menu.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Config.ini</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/private/appconfig.ini</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Layout</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/views/layout.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Stylesheet</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/test3/static/css/web2py-bootstrap3.css</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/test3/appadmin/index</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Errors</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/errors/test3</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>About</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/about/test3</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>web2py.com</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Download</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/download</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Support</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/support</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Demo</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/demo_admin</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Quick Examples</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/examples/default/examples</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>FAQ</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/AlterEgo</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Videos</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/videos/</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Free Applications</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/appliances</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/plugins</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2pyslices.com/</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Documentation</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Online book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Preface</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/00</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Introduction</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/01</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Python</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/02</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Overview</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/03</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Core</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/04</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Views</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/05</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/06</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Forms and Validators</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/07</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Email and SMS</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/08</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Access Control</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/09</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Services</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/10</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Ajax Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/11</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Components and Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/12</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Deployment Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/13</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Other Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/14</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Helping web2py</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/15</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Buy web2py\'s book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://stores.lulu.com/web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Community</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>None</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Groups</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/usergroups</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Twitter</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://twitter.com/web2py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Live Chat</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://webchat.freenode.net/?channels=web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Your Name &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>a cool new app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Web2py Web Framework</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div>web2py, python, framework</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^project_demo/\\w+\\.py$</div></td></tr><tr><td><div>^project_demo/image_insert2/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_test3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/sourav/web2py/applications/test3/sessions/063/091/127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815&#x27;, mode &#x27;rb+&#x27; at 0x7f17b8872c00&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/sourav/web2py/applications/test3/sessions/127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>f8600464326d751a11d7d75bed975f37</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9c48d1e7-a4ca-4068-9a25-1179e44a3815</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_test3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>test3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subtitle</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Test3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>project_demo/image_insert2.html</div></td></tr></table></div>'
+tRp144
+sS'locals'
+p145
+(dp146
+S'size1'
+p147
+S'(160, 90)'
+p148
+sS'dataList'
+p149
+S"['data:image/jpeg;base64', '/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsO...0qaP761zynY0UdTHaLWnYpN9iuMcgyhgQKK3ZegorJzK5D//Z']"
+p150
+sS'imageString'
+p151
+S"'/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsO...0qaP761zynY0UdTHaLWnYpN9iuMcgyhgQKK3ZegorJzK5D//Z'"
+p152
+sS'name_image'
+p153
+S"''"
+p154
+sS'data'
+p155
+S"'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABA...0qaP761zynY0UdTHaLWnYpN9iuMcgyhgQKK3ZegorJzK5D//Z'"
+p156
+sS'size'
+p157
+S'16248'
+p158
+sssS'traceback'
+p159
+S'Traceback (most recent call last):\n  File "/home/sourav/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/sourav/web2py/applications/test3/controllers/project_demo.py", line 48, in <module>\n  File "/home/sourav/web2py/gluon/globals.py", line 412, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/sourav/web2py/applications/test3/controllers/project_demo.py", line 25, in image_insert2\n    imageDecode = base64.b64decode(imageString)\nNameError: global name \'base64\' is not defined\n'
+p160
+s.

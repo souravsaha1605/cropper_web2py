@@ -9,13 +9,28 @@ def image_insert():
     return "hello"
 
 def new():
-    return session.new
+    x = session.new
+    return locals()
 
 def image_insert2():
+    import base64
     size1=(160,90)
     name_image=request.vars.name_image
     data=request.vars.file
-    session.new = data[0]
+    dataList = data.split(',')
+    imageString = dataList[1]
+    size = len(imageString)*3/4
+    session.new = [size]
+    imageString.replace(" ", "+")
+    session.new.append(imageString)
+    imageDecode = base64.b64decode(imageString)
+    session.new.append(imageDecode)
+    imageFileWrite = open('image.jpeg', 'wb+')
+    imageFileWrite.write(imageDecode)
+    imageFileWrite.close()
+    imageFileOpen = open('image.jpeg','rb')
+    y = db.imagestore.insert(name = 'Yes', picture = imageFileOpen)
+    imageFileOpen.close()
     return 1
 
 
