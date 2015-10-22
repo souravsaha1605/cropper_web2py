@@ -12,10 +12,10 @@ response.files.append(URL('static','js/cropper.js'))
 <div id="target"></div>
 
 <form >
- <input id="avatar" type="file" name="avatar" />
+ <input id="avatar" type="file" name="avatar" id=""/>
 <input type="text" name="name_image" id="imageid" >
 
-<input type="button" value="Crop and Save" id="getDataButton">
+<input type="button" value="Crop and Save" id="getDataButton" disabled>
 </form>
 
 
@@ -31,6 +31,7 @@ response.files.append(URL('static','js/cropper.js'))
 </h2>
 <div id="preview">
 </div>
+
 <script>
 $("#avatar").change(function(event){
 var allowedFiles = [".png", ".jpg", ".gif"];
@@ -38,12 +39,15 @@ var allowedFiles = [".png", ".jpg", ".gif"];
             var lblError = $("#lblError");
             var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:()])+(" + allowedFiles.join('|') + ")$");
             if (!regex.test(avatar.val().toLowerCase())) {
+                document.getElementById("getDataButton").disabled = true;
                 lblError.html("Please upload files having extensions: <b>" + allowedFiles.join(', ') + "</b> only.");
                 return false;
             }
+    document.getElementById("getDataButton").disabled = false;
     //readURL(this);
     
-    $("#blah").prop('src',URL.createObjectURL(event.target.files[0]));
+    
+  $("#blah").prop('src',URL.createObjectURL(event.target.files[0]));
   croppedItem  = $('.container > img').cropper({
   aspectRatio: 16 / 9,
   autoCropArea: .7,
@@ -55,15 +59,18 @@ var allowedFiles = [".png", ".jpg", ".gif"];
   cropBoxResizable: false,
   background: false
 });
-
+    
+});
     $("#getDataButton").click(function(){
         event.preventDefault();
-        var file_data=croppedItem.cropper('getCroppedCanvas');
-        var canvas_data=file_data.toDataURL("image/jpeg", 1);
+        var file = $("#avatar")[0].files[0];
+        var fileName = file.name;
+        var file_data=croppedItem.cropper('getCroppedCanvas',{width:1600,height:1200});
+        var canvas_data=file_data.toDataURL("image/jpeg", 1.0);
         //canvas_data=canvas_data.split(",")[1];
         $("#preview").html(canvas_data);
         var form_data = new FormData();
-        form_data.append("name_image",$('input#imageid').val())
+        form_data.append("name_image",fileName)
         form_data.append("file", canvas_data)
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
@@ -75,7 +82,7 @@ var allowedFiles = [".png", ".jpg", ".gif"];
         xhr.open("POST", "{{=URL("project_demo","image_insert2")}}", true);
         xhr.send(form_data);
     });
-});
+
 /*
   */
    </script>
