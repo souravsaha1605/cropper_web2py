@@ -71,16 +71,15 @@ var allowedFiles = [".png", ".jpg", ".gif"];
     $("#getDataButton").click(function(){
         event.preventDefault();
         var file = $("#avatar")[0].files[0];
-        //var fileName = file.name
         var fileNameWoExt = file.name.split('.')[0];
-        var strAppend=".jpeg";
-        var fileName=fileNameWoExt.concat(strAppend);
+        //var strAppend=".jpeg";
+        //var fileName=fileNameWoExt.concat(strAppend);
         var file_data=$croppedItem.cropper('getCroppedCanvas',{width:1600,height:900});
         var canvas_data=file_data.toDataURL("image/jpeg", 1.0);
         //canvas_data=canvas_data.split(",")[1];
         $("#preview").html(canvas_data);
         var form_data = new FormData();
-        form_data.append("name_image",fileName)
+        form_data.append("name_image",fileNameWoExt)
         form_data.append("file", canvas_data)
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
