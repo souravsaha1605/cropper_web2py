@@ -30,10 +30,9 @@ def image_insert2():
         imageFileWrite.write(imageDecode)
         imageFileWrite.close()
         imageFileOpen = open(name_image,'rb')
-        #im=Image.open(imageFileOpen)
-        #(width,height)=im.size
+        im=Image.open(name_image)
+        (width,height)=im.size
         y = db.imagestore.insert(name = name_image, picture = imageFileOpen)
-        imageFileOpen.close()
         os.remove(name_image)
     except:
         os.remove(name_image)
