@@ -25,13 +25,16 @@ def image_insert2():
     session.new.append(imageString)
     imageDecode = base64.b64decode(imageString)
     session.new.append(imageDecode)
-    imageFileWrite = open('image.jpeg', 'wb+')
+    imageFileWrite = open(name_image, 'wb')
     imageFileWrite.write(imageDecode)
     imageFileWrite.close()
-    imageFileOpen = open('image.jpeg','rb')
-    y = db.imagestore.insert(name = 'Yes', picture = imageFileOpen)
+    imageFileOpen = open(name_image,'rb')
+    #im=Image.open(imageFileOpen)
+    #(width,height)=im.size
+    y = db.imagestore.insert(name = name_image, picture = imageFileOpen)
     imageFileOpen.close()
-    return 1
+    os.remove(name_image)
+    return size
 
 
 def image_upload():
