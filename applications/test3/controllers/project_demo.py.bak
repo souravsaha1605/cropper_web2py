@@ -32,32 +32,31 @@ def image_insert2():
     imageFileOpen = open(name_image,'rb')
     im=Image.open(name_image)
     (width,height)=im.size
-    pictureon=im.resize(size1)
-    #im1 = Image.new('pictureon', (width, height))
-    #file_like = cStringIO.StringIO(pictureon)
-    #pictureone=draw_signature(file_like , as_file=True)
-    #name_image_dupli=name_image.split('.')[0]
-    #name_image_992558=name_image+"992*558.jpeg"
+    name_image_dupli=name_image.split('.')[0]
+    name_image_992558=name_image_dupli+"992*558.jpeg"
+    y = db.imagestore.insert(name = name_image, picture = imageFileOpen )
+    #os.remove(name_image)
+    # Changing image size of the uploaded image
+    imageUploaded = db(db.imagestore.id == y).select().first()
+    imageURL = URL('default', 'download', args=[imageUploaded.picture],host=True)
+    imageURL2=imageURL.split('.')
+    imageURL3=imageURL2[5]+'.'+imageURL2[6]+'.'+imageURL2[7]
+    import urllib, cStringIO
+    file = cStringIO.StringIO(urllib.urlopen(imageURL).read())
+    newImage = Image.open(file)
+    session.new.append(imageURL3)
+    (width,height) = newImage.size
+    session.new.append(width)
+    size=(992,558)
+    newImage.thumbnail(size,Image.ANTIALIAS) 
+    newImage.save(name_image_992558,'jpeg')
+    
     #imageDupliFileWrite95=open(name_image_992558, 'wb')
     #imageDupliFileWrite95.write(file_like)
     #imageDupliFileWrite95.close()
     #imageDupliFileOpen=open(name_image_992558, 'rb')
-    y = db.imagestore.insert(name = name_image, picture = imageFileOpen )
-    os.remove(name_image)
-    # Changing image size of the uploaded image
-    imageUploaded = db(db.imagestore.id == y).select().first()
-    imageURL = URL('default', 'download', args=[imageUploaded.picture],host=True)
-    import urllib, cStringIO
-    file = cStringIO.StringIO(urllib.urlopen(imageURL).read())
-    newImage = Image.open(file)
-    session.new.append(imageURL)
-    (width,height) = newImage.size
-    session.new.append(width)
-    size=(150,150)
-    newImage.thumbnail(size,Image.ANTIALIAS)
-    thumbName='uploads.thumb.%s.jpg' % (uuid.uuid4())
-    newImage.save(thumbName,'jpeg')
-    return 
+    db(db.imagestore.id == y).update(picture1=name_image_992558)
+    return newImage
 
 
 def image_upload():
