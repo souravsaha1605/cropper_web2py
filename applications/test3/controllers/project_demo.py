@@ -37,6 +37,13 @@ def image_insert2():
         name_image_992558=name_image_dupli+"992*558.jpeg"
         y = db.imagestore.insert(name = name_image, picture = imageFileOpen )
         os.remove(name_image)
+        """
+        row = db(db.imagestore.checkfield.like('false')).select().first()
+        if row:
+            return 'need to insert'
+        else:
+            return 'no need to insert'
+        """
         # Changing image size of the uploaded image
         imageUploaded = db(db.imagestore.id == y).select().first()
         imageURL = URL('default', 'download', args=[imageUploaded.picture],host=True)

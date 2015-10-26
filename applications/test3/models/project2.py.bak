@@ -6,5 +6,7 @@ db.define_table(
     Field('name'),
 
     Field('picture', 'upload', default=''),
-    Field('picture1', 'upload', default=''),
+    Field('picture992558', 'upload', default=''),
+    Field('picture330185625', 'upload', default=''),
+    Field('picture16090', 'upload', default=''),
     format = '%(name)s')
