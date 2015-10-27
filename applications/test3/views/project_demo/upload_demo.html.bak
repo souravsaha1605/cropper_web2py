@@ -33,6 +33,8 @@ response.files.append(URL('static','js/cropper.js'))
 </div>
 
 <script>
+     var $croppedItem = $('.container > img'),
+    replaced;
 $("#avatar").change(function(event){
 var allowedFiles = [".png", ".jpg", ".gif"];
             var avatar = $("#avatar");
@@ -48,7 +50,7 @@ var allowedFiles = [".png", ".jpg", ".gif"];
     
     
   $("#blah").prop('src',URL.createObjectURL(event.target.files[0]));
-  croppedItem  = $('.container > img').cropper({
+   $croppedItem.cropper({
   aspectRatio: 16 / 9,
   autoCropArea: .7,
   strict: true,
@@ -59,18 +61,25 @@ var allowedFiles = [".png", ".jpg", ".gif"];
   cropBoxResizable: false,
   background: false
 });
-    
+    var url=URL.createObjectURL(event.target.files[0]);
+     $croppedItem.cropper('replace', url);
+     replaced = !replaced;
+
 });
+    
+    
     $("#getDataButton").click(function(){
         event.preventDefault();
         var file = $("#avatar")[0].files[0];
-        var fileName = file.name;
-        var file_data=croppedItem.cropper('getCroppedCanvas',{width:1600,height:1200});
+        var fileNameWoExt = file.name.split('.')[0];
+        //var strAppend=".jpeg";
+        //var fileName=fileNameWoExt.concat(strAppend);
+        var file_data=$croppedItem.cropper('getCroppedCanvas',{width:1600,height:900});
         var canvas_data=file_data.toDataURL("image/jpeg", 1.0);
         //canvas_data=canvas_data.split(",")[1];
         $("#preview").html(canvas_data);
         var form_data = new FormData();
-        form_data.append("name_image",fileName)
+        form_data.append("name_image",fileNameWoExt)
         form_data.append("file", canvas_data)
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {

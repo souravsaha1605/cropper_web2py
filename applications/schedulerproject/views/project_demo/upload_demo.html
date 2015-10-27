@@ -1,0 +1,104 @@
+{{
+response.files.append(URL('static','css/cropper.min.css'))
+response.files.append(URL('static','js/cropper.js'))
+}}
+
+{{extend 'layout.html'}}
+
+<h1>This is the project_demo/cropper.html template</h1>
+
+
+<span id="lblError"></span>
+<div id="target"></div>
+
+<form >
+ <input id="avatar" type="file" name="avatar" id=""/>
+<input type="text" name="name_image" id="imageid" >
+
+<input type="button" value="Crop and Save" id="getDataButton" disabled>
+</form>
+
+
+
+<div class="cropper-example-1 container" style="width: 600.64px; height: 369.36px; left: 112.68px; top: 71.82px;">
+    <img id="blah" src="#" alt="your image" />
+  
+</div>
+<h2>
+   <p id="demo"></p>
+    <p id="showValue"></p>
+    <p id="displayValue"></p>
+</h2>
+<div id="preview">
+</div>
+
+<script>
+     var $croppedItem = $('.container > img'),
+    replaced;
+$("#avatar").change(function(event){
+var allowedFiles = [".png", ".jpg", ".gif", ".jpeg"];
+            var avatar = $("#avatar");
+            var lblError = $("#lblError");
+            var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:()])+(" + allowedFiles.join('|') + ")$");
+            if (!regex.test(avatar.val().toLowerCase())) {
+                document.getElementById("getDataButton").disabled = true;
+                lblError.html("Please upload files having extensions: <b>" + allowedFiles.join(', ') + "</b> only.");
+                return false;
+            }
+    document.getElementById("getDataButton").disabled = false;
+    //readURL(this);
+    
+    
+  $("#blah").prop('src',URL.createObjectURL(event.target.files[0]));
+   $croppedItem.cropper({
+  aspectRatio: 16 / 9,
+  autoCropArea: .7,
+  strict: true,
+  guides: false,
+  highlight: true,
+  dragCrop: false,
+  cropBoxMovable: false,
+  cropBoxResizable: false,
+  background: false
+});
+    var url=URL.createObjectURL(event.target.files[0]);
+     $croppedItem.cropper('replace', url);
+     replaced = !replaced;
+
+});
+    
+    
+    $("#getDataButton").click(function(){
+        event.preventDefault();
+        var file = $("#avatar")[0].files[0];
+        var fileNameWoExt = file.name.split('.')[0];
+        var strAppend=".jpeg";
+        var fileName=fileNameWoExt.concat(strAppend);
+        var file_data=$croppedItem.cropper('getCroppedCanvas',{width:1600,height:900});
+        var canvas_data=file_data.toDataURL("image/jpeg", 1.0);
+        //canvas_data=canvas_data.split(",")[1];
+        $("#preview").html(canvas_data);
+        var form_data = new FormData();
+        form_data.append("name_image",fileName)
+        form_data.append("file", canvas_data)
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				document.getElementById("target").innerHTML = xhr.responseText;
+                document.getElementById("lblError").innerHTML = "";
+			}
+		}
+        xhr.open("POST", "{{=URL("project_demo","image_insert2")}}", true);
+        xhr.send(form_data);
+    });
+
+/*
+  */
+   </script>
+{{
+record = SQLTABLE(db().select(db.imagestore.ALL),
+                       upload = URL('default','download'), # allows pics preview
+                       headers='fieldname:capitalize')
+
+}}
+{{=record}}
