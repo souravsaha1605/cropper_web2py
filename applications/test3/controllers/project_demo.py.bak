@@ -60,7 +60,7 @@ def image_insert2():
         db(db.imagestore.id == y).update(picture992558=imageDupliFileOpen)
         imageDupliFileOpen.close()
         os.remove(name_image_992558)
-        return y
+        return 'inserted'
     else:
         return 'Failed to insert, image greater than 5MB'
 

@@ -32,32 +32,44 @@ def resizeimg():
         #file3 = cStringIO.StringIO(urllib.urlopen(imageURL).read())
         newImage1 = Image.open(file1)
         (width1, height1)=newImage1.size
-        if width1>=992 and height1>=558:
-            #newImage2 = Image.open(file2)
-            #newImage3 = Image.open(file3)
-            size1=(992,558)
-            #size2=(330,185)
-            #size3=(160,90)
-            newImage1.thumbnail(size1,Image.ANTIALIAS)
-            #newImage2.thumbnail(size2,Image.ANTIALIAS)
-            #newImage3.thumbnail(size3,Image.ANTIALIAS)
-            newImage1.save(name_image_992558,'jpeg')
-            #newImage2.save(name_image_330185625,'jpeg')
-            #newImage3.save(name_image_16090,'jpeg')
-            imageDupliFileOpen1=open(name_image_992558, 'rb')
-            #imageDupliFileOpen2=open(name_image_330185625, 'rb')
-            #imageDupliFileOpen3=open(name_image_16090, 'rb')
-            #db.imagestore.insert(name = imageUploaded.name, picture = imageDupliFileOpen)
-            #db(db.imagestore.id == imageUploaded.id).update(picture992558=imageDupliFileOpen1, picture330185625=imageDupliFileOpen2,         picture16090=imageDupliFileOpen3)
-            updateStatus=db(db.imagestore.id == imageUploaded.id).update(picture992558=imageDupliFileOpen1)
-            imageDupliFileOpen1.close()
-            #imageDupliFileOpen2.close()
-            #imageDupliFileOpen3.close()
-            os.remove(name_image_992558)
-            #os.remove(name_image_330185625)
-            #os.remove(name_image_16090)
+        updateStat='Failed All'
+        if width1>=160 and height1>=90:
+            file3 = cStringIO.StringIO(urllib.urlopen(imageURL).read())
+            newImage3 = Image.open(file3)
+            size3=(160,90)
+            newImage3.thumbnail(size3,Image.ANTIALIAS)
+            newImage3.save(name_image_16090,'jpeg')
+            imageDupliFileOpen3=open(name_image_16090, 'rb')
+            updateStatus=db(db.imagestore.id == imageUploaded.id).update(picture16090=imageDupliFileOpen3)
+            imageDupliFileOpen3.close()
+            os.remove(name_image_16090)
+            updateStat='Failed 2'
+            db.commit()
+            if width1>=330 and height1>=185.625:
+                file2 = cStringIO.StringIO(urllib.urlopen(imageURL).read())
+                newImage2 = Image.open(file2)
+                size2=(330,185.625)
+                newImage2.thumbnail(size2,Image.ANTIALIAS)
+                newImage2.save(name_image_330185625,'jpeg')
+                imageDupliFileOpen2=open(name_image_330185625, 'rb')
+                updateStatus=db(db.imagestore.id == imageUploaded.id).update(picture330185625=imageDupliFileOpen2)
+                imageDupliFileOpen2.close()
+                os.remove(name_image_330185625)
+                updateStat='Failed 1'
+                db.commit()
+                if width1>=992 and height1>=558:
+                    size1=(992,558)
+                    newImage1.thumbnail(size1,Image.ANTIALIAS)
+                    newImage1.save(name_image_992558,'jpeg')
+                    imageDupliFileOpen1=open(name_image_992558, 'rb')
+                    updateStatus=db(db.imagestore.id == imageUploaded.id).update(picture992558=imageDupliFileOpen1)
+                    imageDupliFileOpen1.close()
+                    os.remove(name_image_992558)
+                    updateStat='All Success'
+                    db.commit()
+                
             if updateStatus:
-                db(db.imagestore.id == imageUploaded.id).update(checkfield='True')
+                db(db.imagestore.id == imageUploaded.id).update(checkfield=updateStat)
             else:
                 db(db.imagestore.id == imageUploaded.id).update(checkfield='Failed')
             db.commit()
@@ -65,10 +77,10 @@ def resizeimg():
         else:
             db(db.imagestore.id == imageUploaded.id).update(checkfield='Failed')
             db.commit()
-            return 'error uploading image of size less than 1600*900'
+            return 'error uploading image '
         
     else:
         open('/tmp/myPictureget2','a').write('Successfully updated' + t + '\n')
-        stop_task(39)
+        stop_task(44)
 from gluon.scheduler import Scheduler
 scheduler = Scheduler(db,dict(our_function=happy_birthday, status = generate_status, getimg = resizeimg))

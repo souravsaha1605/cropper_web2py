@@ -34,7 +34,7 @@ def image_insert2():
         im=Image.open(name_image)
         (width,height)=im.size
         name_image_dupli=name_image.split('.')[0]
-        name_image_992558=name_image_dupli+"992*558.jpeg"
+        name_image_992558=name_image_dupli+"992*558.jpg"
         y = db.imagestore.insert(name = name_image, picture = imageFileOpen )
         os.remove(name_image)
         """
@@ -55,7 +55,7 @@ def image_insert2():
         session.new.append(width)
         size=(992,558)
         newImage.thumbnail(size,Image.ANTIALIAS) 
-        newImage.save(name_image_992558,'jpeg')
+        newImage.save(name_image_992558,'jpg')
         imageDupliFileOpen=open(name_image_992558, 'rb')
         db(db.imagestore.id == y).update(picture992558=imageDupliFileOpen)
         imageDupliFileOpen.close()

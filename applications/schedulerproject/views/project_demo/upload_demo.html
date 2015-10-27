@@ -36,7 +36,7 @@ response.files.append(URL('static','js/cropper.js'))
      var $croppedItem = $('.container > img'),
     replaced;
 $("#avatar").change(function(event){
-var allowedFiles = [".png", ".jpg", ".gif"];
+var allowedFiles = [".png", ".jpg", ".gif", ".jpeg"];
             var avatar = $("#avatar");
             var lblError = $("#lblError");
             var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:()])+(" + allowedFiles.join('|') + ")$");
