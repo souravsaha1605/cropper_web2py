@@ -21,7 +21,7 @@ def resizeimg():
     t = time.ctime()
     imageUploaded = db(db.imagestore.checkfield.like('false')).select().first()
     if imageUploaded:
-        name_image_dupli=imageUploaded.name.split(',')[0]
+        name_image_dupli=imageUploaded.name.split('.')[0]
         name_image_992558=name_image_dupli+"992*558.jpeg"
         name_image_330185625=name_image_dupli+"330*186.jpeg"
         name_image_16090=name_image_dupli+"160*90.jpeg"
